@@ -1,3 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 15px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Manrope", sans-serif;
+}
+
+h1 {
+  font-size: 15px;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
