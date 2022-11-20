@@ -16,9 +16,7 @@ $primary-text: hsl(227, 35%, 25%);
     padding: 0;
 }
 
-h1 {
-    font-size: 15px;
-}
+
 
 @mixin media-md {
     @media screen and (min-width: 768px) {
