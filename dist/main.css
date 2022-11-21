@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Manrope", sans-serif;
+  background-image: url("../src/images/bg-pattern.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 90%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../src/images/pattern-circles.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header h1 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: hsl(227deg, 35%, 25%);
+}
+header p {
+  font-size: 0.9375rem;
+  line-height: 1.5rem;
+  color: hsl(225deg, 20%, 60%);
+}
+
+main {
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0.5rem;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */

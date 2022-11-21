@@ -9,7 +9,7 @@
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="./images/favicon-32x32.png"
+            href="./src/images/favicon-32x32.png"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,10 +22,36 @@
         <link rel="stylesheet" href="/dist/main.css" />
     </head>
     <body>
-        Simple, traffic-based pricing Sign-up for our 30-day trial. No credit
-        card required. Pageviews $ /month Monthly Billing Yearly Billing 25%
-        discount Unlimited websites 100% data ownership Email reports Start my
-        trial
+        <header>
+            <h1>Simple, traffic-based pricing</h1>
+            <p>Sign-up for our 30-day trial.</p>
+            <p>No credit card required.</p>
+        </header>
+        <main>
+            <div class="wrapper">
+                <div class="top">
+                    <div class="top__pageviews">
+                        ???k Pageviews $??.?? /month
+                    </div>
+                    <div class="top__slider"></div>
+                    <div class="top__billing"></div>
+                    <div class="top__billing__monthly">Monthly Billing</div>
+                    <div class="top__billing__toggle">
+                        <div class="top_billing__toggle-switch"></div>
+                    </div>
+                    <div class="top__billing__yearly">Yearly Billing</div>
+                    <div class="top__billing__discount">25% discount</div>
+                </div>
+                <div class="bottom">
+                    <ul class="list">
+                        <li>Unlimited websites</li>
+                        <li>100% data ownership</li>
+                        <li>Email reports</li>
+                    </ul>
+                    <button class="trial">Start my trial</button>
+                </div>
+            </div>
+        </main>
 
         <footer>
             <div class="attribution">
