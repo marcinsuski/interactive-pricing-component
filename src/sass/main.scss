@@ -175,6 +175,7 @@ main {
                 position: absolute;
                 left: 0.3rem;
                 top: 0.3rem;
+                transition: 0.3s ease-in-out;
             }
         }
 
@@ -220,6 +221,10 @@ main {
 
 .hidden {
     display: none;
+}
+
+.active {
+    transform: translateX(100%);
 }
 
 .bottom {
