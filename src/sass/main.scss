@@ -11,11 +11,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    letter-spacing: 0.03rem;
+    font-weight: 600;
 }
 
 header {
     width: 90%;
-    height: 15rem;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,6 +41,240 @@ header {
 
 main {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper {
+    width: clamp(20.5rem, 10.5rem + 20vw, 40rem);
+    height: 60vh;
+    background-color: $wrapper-bg;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.top {
+    width: 100%;
+    height: 55%;
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    display: grid;
+    grid-template-columns: 40% 20% 30% 10%;
+    grid-template-rows: 20% 30% 30% 20%;
+    color: $secondary-text;
+    font-weight: 600;
+
+    &__pageviews {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        align-self: center;
+        justify-self: center;
+        font-size: 0.9rem;
+
+        span {
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 800;
+        }
+    }
+
+    &__slider {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+        align-self: center;
+
+        #slider {
+            outline: 1px solid transparent;
+            appearance: none;
+            width: 100%;
+            height: 0.7rem;
+            background: $empty-slider;
+            cursor: pointer;
+            border-radius: 0.5rem;
+        }
+    }
+
+    #slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $slider-bg;
+        background-image: url("../src/images/icon-slider.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        box-shadow: 0 10px 24px 10px $slider-bar-full;
+
+        &:hover {
+            background: darken($color: hsl(174, 86%, 45%), $amount: 5);
+            background-image: url("../src/images/icon-slider.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        #slider::-webkit-range-thumb {
+            width: 100px; /* Set a specific slider handle width */
+            height: 25px; /* Slider handle height */
+            background: #04aa6d; /* Green background */
+            cursor: pointer; /* Cursor on hover */
+        }
+    }
+    &__price {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+        align-self: center;
+        justify-self: center;
+        position: relative;
+
+        #price {
+            color: $primary-text;
+            font-weight: 800;
+            font-size: 2rem;
+        }
+    }
+
+    &__billing {
+        grid-column: 1 / 5;
+        grid-row: 2 / 4;
+
+        &__monthly {
+            grid-column: 1 / 2;
+            grid-row: 4 / 5;
+            font-size: 0.8rem;
+            align-self: center;
+            justify-self: end;
+        }
+
+        &__toggle {
+            align-self: center;
+            justify-self: center;
+            width: 2.8rem;
+            height: 1.5rem;
+            background-color: $toggle-bg;
+            border-radius: 1.5rem;
+            grid-column: 2 / 3;
+            grid-row: 4 / 4;
+            position: relative;
+
+            &:hover {
+                background-color: $slider-bar-full;
+                cursor: pointer;
+            }
+
+            &-switch {
+                background-color: white;
+                width: 1rem;
+                height: 0.95rem;
+                border-radius: 50%;
+                position: absolute;
+                left: 0.3rem;
+                top: 0.3rem;
+            }
+        }
+
+        &__yearly {
+            grid-column: 3 / 4;
+            grid-row: 4 / 5;
+            font-size: 0.8rem;
+            align-self: center;
+            justify-self: start;
+        }
+
+        &__discount {
+            grid-column: 4 / 5;
+            grid-row: 4 / 5;
+
+            &-mobile {
+                grid-column: 4 / 5;
+                grid-row: 4 / 5;
+                font-size: 0.7rem;
+                width: 2.5rem;
+                padding: 0.2rem 0;
+                text-align: center;
+                border-radius: 30%;
+                align-self: center;
+                justify-self: center;
+                background-color: $discount-bg;
+                color: $discount-text;
+                margin-left: 0.2rem;
+            }
+
+            &-pc {
+                grid-column: 4 / 5;
+                grid-row: 4 / 5;
+                font-size: 0.5rem;
+                align-self: center;
+                justify-self: center;
+                background-color: $discount-bg;
+                color: $discount-text;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.bottom {
+    width: 100%;
+    height: 45%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .list {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        width: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .list__item {
+        list-style-type: none;
+        font-size: 0.8rem;
+        color: $secondary-text;
+        line-height: 1.7rem;
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: "";
+            height: 1.5rem;
+            width: 1.5rem;
+            position: absolute;
+            left: -2rem;
+            background-image: url("../src/images/icon-check.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .trial {
+        width: 60%;
+        height: 3em;
+        padding: 0.6rem;
+        border-radius: 1.5rem;
+        outline: 1px solid transparent;
+        border: none;
+        color: $cta-text;
+        background-color: $primary-text;
+        margin-bottom: 0.5rem;
+
+        &:hover {
+            cursor: pointer;
+            color: white;
+        }
+    }
 }
 
 footer {

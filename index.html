@@ -31,23 +31,41 @@
             <div class="wrapper">
                 <div class="top">
                     <div class="top__pageviews">
-                        ???k Pageviews $??.?? /month
+                        <span id="js-pageviews">100</span
+                        ><span>k pageviews</span>
                     </div>
-                    <div class="top__slider"></div>
-                    <div class="top__billing"></div>
+                    <div class="top__slider">
+                        <input
+                            type="range"
+                            min="1"
+                            max="200"
+                            value="100"
+                            class="slider"
+                            id="slider"
+                        />
+                    </div>
+                    <div class="top__price">
+                        <span id="price">$16.00</span>
+                        <span id="month"> /month</span>
+                    </div>
                     <div class="top__billing__monthly">Monthly Billing</div>
                     <div class="top__billing__toggle">
-                        <div class="top_billing__toggle-switch"></div>
+                        <div class="top__billing__toggle-switch"></div>
                     </div>
                     <div class="top__billing__yearly">Yearly Billing</div>
-                    <div class="top__billing__discount">25% discount</div>
+                    <div class="top__billing__discount-mobile">- 25%</div>
+                    <div class="top__billing__discount-pc hidden">
+                        25% discount
+                    </div>
                 </div>
                 <div class="bottom">
-                    <ul class="list">
-                        <li>Unlimited websites</li>
-                        <li>100% data ownership</li>
-                        <li>Email reports</li>
-                    </ul>
+                    <div class="list">
+                        <ul>
+                            <li class="list__item">Unlimited websites</li>
+                            <li class="list__item">100% data ownership</li>
+                            <li class="list__item">Email reports</li>
+                        </ul>
+                    </div>
                     <button class="trial">Start my trial</button>
                 </div>
             </div>
