@@ -18,59 +18,64 @@
             rel="stylesheet"
         />
         <title>Frontend Mentor | Interactive pricing component</title>
-        <script src="/src/app.js" defer></script>
+
         <link rel="stylesheet" href="/dist/main.css" />
     </head>
     <body>
-        <header>
-            <h1>Simple, traffic-based pricing</h1>
-            <p>Sign-up for our 30-day trial.</p>
-            <p>No credit card required.</p>
-        </header>
-        <main>
-            <div class="wrapper">
-                <div class="top">
-                    <div class="top__pageviews">
-                        <span id="js-pageviews">100</span
-                        ><span>k pageviews</span>
+        <div class="container">
+            <header>
+                <h1>Simple, traffic-based pricing</h1>
+                <div class="text">
+                    <span>Sign-up for our 30-day trial.</span>
+                    <span> No credit card required.</span>
+                </div>
+            </header>
+            <main>
+                <div class="wrapper">
+                    <div class="top">
+                        <div class="top__pageviews">
+                            <span id="js-pageviews">100</span
+                            ><span>k pageviews</span>
+                        </div>
+                        <div class="top__slider">
+                            <input
+                                type="range"
+                                min="1"
+                                max="200"
+                                value="100"
+                                class="slider"
+                                id="slider"
+                            />
+                        </div>
+                        <div class="top__price">
+                            <span id="price">$16.00</span>
+                            <span id="month"> /month</span>
+                        </div>
+                        <div class="top__billing__monthly">Monthly Billing</div>
+                        <div class="top__billing__toggle">
+                            <div class="top__billing__toggle-switch"></div>
+                        </div>
+                        <div class="top__billing__yearly">Yearly Billing</div>
+                        <div class="top__billing__discount-mobile hidden">
+                            - 25%
+                        </div>
+                        <div class="top__billing__discount-pc">
+                            25% discount
+                        </div>
                     </div>
-                    <div class="top__slider">
-                        <input
-                            type="range"
-                            min="1"
-                            max="200"
-                            value="100"
-                            class="slider"
-                            id="slider"
-                        />
-                    </div>
-                    <div class="top__price">
-                        <span id="price">$16.00</span>
-                        <span id="month"> /month</span>
-                    </div>
-                    <div class="top__billing__monthly">Monthly Billing</div>
-                    <div class="top__billing__toggle">
-                        <div class="top__billing__toggle-switch"></div>
-                    </div>
-                    <div class="top__billing__yearly">Yearly Billing</div>
-                    <div class="top__billing__discount-mobile">- 25%</div>
-                    <div class="top__billing__discount-pc hidden">
-                        25% discount
+                    <div class="bottom">
+                        <div class="list">
+                            <ul>
+                                <li class="list__item">Unlimited websites</li>
+                                <li class="list__item">100% data ownership</li>
+                                <li class="list__item">Email reports</li>
+                            </ul>
+                        </div>
+                        <button class="trial">Start my trial</button>
                     </div>
                 </div>
-                <div class="bottom">
-                    <div class="list">
-                        <ul>
-                            <li class="list__item">Unlimited websites</li>
-                            <li class="list__item">100% data ownership</li>
-                            <li class="list__item">Email reports</li>
-                        </ul>
-                    </div>
-                    <button class="trial">Start my trial</button>
-                </div>
-            </div>
-        </main>
-
+            </main>
+        </div>
         <footer>
             <div class="attribution">
                 Challenge by
@@ -82,5 +87,6 @@
                 <a href="https://github.com/marcinsuski">Marcin Suski</a>.
             </div>
         </footer>
+        <script src="/src/app.js"></script>
     </body>
 </html>

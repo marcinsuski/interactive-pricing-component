@@ -14,9 +14,22 @@ body {
   background-size: 100% 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   letter-spacing: 0.03rem;
   font-weight: 600;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../src/images/bg-pattern.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header {
@@ -35,7 +48,12 @@ header h1 {
   margin-bottom: 1rem;
   color: hsl(227deg, 35%, 25%);
 }
-header p {
+header .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header span {
   font-size: 0.9375rem;
   line-height: 1.5rem;
   color: hsl(225deg, 20%, 60%);
@@ -49,7 +67,7 @@ main {
 }
 
 .wrapper {
-  width: clamp(20.5rem, 10.5rem + 20vw, 40rem);
+  width: clamp(20.5rem, 10.5rem + 30vw, 32rem);
   height: 60vh;
   background-color: hsl(0deg, 0%, 100%);
   border-radius: 0.5rem;
@@ -137,6 +155,11 @@ main {
   grid-column: 1/5;
   grid-row: 2/4;
 }
+.top__billing__slider {
+  grid-column: 1/5;
+  grid-row: 2/3;
+  align-self: center;
+}
 .top__billing__monthly {
   grid-column: 1/2;
   grid-row: 4/5;
@@ -187,7 +210,7 @@ main {
   width: 2.5rem;
   padding: 0.2rem 0;
   text-align: center;
-  border-radius: 30%;
+  border-radius: 1rem;
   align-self: center;
   justify-self: center;
   background-color: hsl(14deg, 92%, 95%);
@@ -196,19 +219,95 @@ main {
 }
 .top__billing__discount-pc {
   grid-column: 4/5;
-  grid-row: 4/5;
-  font-size: 0.5rem;
+  grid-row: 3/4;
+  width: 4.5rem;
+  font-size: 0.6rem;
+  border-radius: 1rem;
   align-self: center;
   justify-self: center;
   background-color: hsl(14deg, 92%, 95%);
   color: hsl(15deg, 100%, 70%);
 }
 
+@media only screen and (min-width: 50rem) {
+  .wrapper {
+    height: 50vh;
+  }
+  header .text {
+    flex-direction: row;
+  }
+  .top {
+    height: 60%;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    grid-template-columns: 42.5% 15% 22.5% 20%;
+    grid-template-rows: 30% 30% 40%;
+  }
+  .top__pageviews {
+    font-size: 0.7rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .top__price {
+    grid-column: 2/5;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: end;
+    padding-right: 1rem;
+    position: relative;
+  }
+  .top__price #price {
+    color: hsl(227deg, 35%, 25%);
+    font-weight: 800;
+    font-size: 1.8rem;
+  }
+  .top__price #month {
+    font-size: 0.8rem;
+  }
+  .top__slider {
+    grid-column: 1/5;
+    grid-row: 2/3;
+    align-self: center;
+  }
+  .top__billing {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .top__billing__monthly {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    font-size: 0.8rem;
+    align-self: center;
+    justify-self: end;
+  }
+  .top__billing__yearly {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    font-size: 0.8rem;
+    align-self: center;
+    justify-self: start;
+  }
+  .top__billing__discount {
+    grid-column: 3/4;
+    grid-row: 3/4;
+  }
+  .top__billing__toggle {
+    align-self: center;
+    justify-self: center;
+    width: 2.8rem;
+    height: 1.5rem;
+    background-color: hsl(223deg, 50%, 87%);
+    border-radius: 1.5rem;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    position: relative;
+  }
+}
 .hidden {
   display: none;
 }
 
-.active {
+.yearly {
   transform: translateX(100%);
 }
 
@@ -223,8 +322,9 @@ main {
 .bottom .list {
   text-align: center;
   margin-bottom: 1.5rem;
-  width: 60%;
+  width: min(60%, 14rem);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -262,7 +362,39 @@ main {
   color: white;
 }
 
+@media only screen and (min-width: 50rem) {
+  .bottom {
+    height: 40%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .bottom .list {
+    display: block;
+    text-align: start;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .bottom .trial {
+    width: 10rem;
+    height: 3rem;
+    padding: 0.6rem;
+    border-radius: 1.5rem;
+    font-size: 0.7rem;
+    outline: 1px solid transparent;
+    border: none;
+    color: hsl(226deg, 100%, 87%);
+    background-color: hsl(227deg, 35%, 25%);
+    margin-bottom: 0.5rem;
+  }
+}
 footer {
+  display: none;
   position: fixed;
   bottom: 0.5rem;
 }
@@ -272,4 +404,82 @@ footer .attribution {
 }
 footer .attribution a {
   color: hsl(228deg, 45%, 44%);
+}
+
+@media only screen and (min-width: 80rem) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-image: none;
+    background-color: rgb(236, 236, 236);
+  }
+  .container {
+    background-color: white;
+    height: 80vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px #e2e2e2;
+  }
+  header {
+    margin: 1.5rem 0;
+    width: 90%;
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../src/images/pattern-circles.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 110px;
+  }
+  header h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: hsl(227deg, 35%, 25%);
+  }
+  header span {
+    font-size: 0.7rem;
+    color: hsl(225deg, 20%, 60%);
+  }
+  main {
+    width: 100%;
+    height: 55%;
+  }
+  .top__billing__monthly {
+    font-size: 0.7rem;
+    align-self: center;
+    justify-self: end;
+  }
+  .top__billing__yearly {
+    font-size: 0.7rem;
+    align-self: center;
+    justify-self: start;
+  }
+  .top__billing__toggle {
+    align-self: center;
+    justify-self: center;
+    width: 2.6rem;
+    height: 1.5rem;
+    background-color: hsl(223deg, 50%, 87%);
+    border-radius: 1.5rem;
+  }
+  .bottom .list__item {
+    font-size: 0.6rem;
+    line-height: 1.4rem;
+  }
+  .bottom .trial {
+    width: 8rem;
+    height: 2.2rem;
+    padding: 0.6rem;
+    border-radius: 1.5rem;
+    font-size: 0.7rem;
+    outline: 1px solid transparent;
+    border: none;
+    color: hsl(226deg, 100%, 87%);
+    background-color: hsl(227deg, 35%, 25%);
+    margin-bottom: 0.5rem;
+  }
 }/*# sourceMappingURL=main.css.map */
